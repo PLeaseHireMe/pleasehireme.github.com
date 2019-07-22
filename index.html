@@ -146,7 +146,7 @@
         </div>
         <script type="text/javascript">
         document.querySelector('#js-input-DisplayName').addEventListener('input', function () {
-            document.querySelector('#js-DisplayName').innerHTML = document.querySelector('#js-input-DisplayName').value !== '' ? document.querySelector('#js-input-DisplayName').value : '{{名字}}';
+            document.querySelectorAll('#js-DisplayName').forEach(function (x) {x.innerHTML = document.querySelector('#js-input-DisplayName').value !== '' ? document.querySelector('#js-input-DisplayName').value : '{{名字}}';})
         });
         </script>
         <div class="section" id="footer" style="font-family: 'Inconsolata', 'Menlo', 'Consolas', 'Source Code Pro', 'Roboto Mono', monospace; text-align: center; background: rgba(0, 0, 0, 0.1);">
