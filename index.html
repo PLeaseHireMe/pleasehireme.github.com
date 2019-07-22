@@ -83,8 +83,25 @@
             line-height: 1.6em;
             margin: 0 0 0.8em;
         }
+		.capture button{
+			font-family: -apple-system, 'Helvetica Neue', 'Ubuntu', 'Open Sans', sans-serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans SC';
+            font-size: 18px;
+			border: none;
+			border-radius:3px;
+			background: #ff4200;
+			color: #FFF;
+		}
         </style>
     </head>
+	<script type="text/javascript" src="js/html2canvas.js"></script>
+    <script type="text/javascript">
+      function convert() {
+	    alert("截图功能尚不完善，请将页面拉到最底长按保存图片！");
+        html2canvas(document.body).then(canvas => {
+          document.body.appendChild(canvas)
+        });
+      }
+    </script>
     <body data-fubao="修了">
         <header class="section" id="header" style="font-size: 18px; text-align: left; background: rgba(0, 0, 0, 0.1);">
             <form class="" style="max-width: 280px; margin: 0 auto;">
@@ -159,6 +176,9 @@
             <div class="">
                 Source code on <a target="_blank" href="https://github.com/neruthes/xfb.icu" style="color: #FFF;">GitHub</a>
             </div>
+			<div class="capture">
+			<button type="button" name="capture" onclick="convert()">截图</button>
+			</div>
         </div>
     </body>
 </html>
