@@ -91,6 +91,10 @@
 			background: #ff4200;
 			color: #FFF;
 		}
+		.imger img{
+			width: 100%;
+			height: 100%;
+		}
         </style>
     </head>
 	<script type="text/javascript" src="js/html2canvas.js"></script>
@@ -98,7 +102,7 @@
       function convert() {
 	    alert("截图功能尚不完善，请将页面拉到最底长按保存图片！");
         html2canvas(document.body).then(canvas => {
-          document.body.appendChild(canvas)
+          document.getElementById("img").src = canvas.toDataURL();
         });
       }
     </script>
@@ -177,8 +181,11 @@
                 Source code on <a target="_blank" href="https://github.com/neruthes/xfb.icu" style="color: #FFF;">GitHub</a>
             </div>
 			<div class="capture">
-			<button type="button" name="capture" onclick="convert()">截图</button>
+				<button type="button" name="capture" onclick="convert()">截图</button>
 			</div>
         </div>
     </body>
+	<div class="imger">
+　　	<img src="" id="img" alt="">
+	</div>
 </html>
